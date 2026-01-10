@@ -80,4 +80,4 @@ AtomicBid/
 
 ## License
 
-ISC
+MIT License - see [LICENSE](LICENSE) file for details
