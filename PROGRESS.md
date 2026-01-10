@@ -54,7 +54,7 @@ The application features:
 3. Get your connection string
 4. Update the `.env` file with your MongoDB URI:
    ```
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/atomicbid?retryWrites=true&w=majority
+   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/atomicbid?retryWrites=true&w=majority
    ```
 
 ### Option 2: Use Local MongoDB
