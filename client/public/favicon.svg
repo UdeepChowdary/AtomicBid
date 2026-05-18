@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbd23"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer Hexagon -->
+  <path d="M200 25 L360 115 L360 285 L200 375 L40 285 L40 115 Z" fill="#05040c" stroke="url(#brandGrad)" stroke-width="20" stroke-linejoin="round"/>
+  
+  <g transform="translate(200, 200)">
+    <!-- Atomic Orbits -->
+    <ellipse cx="0" cy="0" rx="45" ry="120" fill="none" stroke="url(#brandGrad)" stroke-width="16" transform="rotate(0)" />
+    <ellipse cx="0" cy="0" rx="45" ry="120" fill="none" stroke="url(#brandGrad)" stroke-width="16" transform="rotate(60)" />
+    <ellipse cx="0" cy="0" rx="45" ry="120" fill="none" stroke="url(#brandGrad)" stroke-width="16" transform="rotate(120)" />
+    
+    <!-- Energy Bolt -->
+    <path d="M -15 -45 L 20 -45 L 0 5 L 25 5 L -15 50 L -5 10 L -30 10 Z" fill="url(#goldGrad)" filter="url(#glow)"/>
+  </g>
+</svg>

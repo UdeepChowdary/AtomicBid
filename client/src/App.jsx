@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SocketProvider } from './context/SocketContext';
-import { AuthProvider } from './context/AuthContext';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import AuctionsPage from './pages/AuctionsPage';
-import AuctionDetailPage from './pages/AuctionDetailPage';
-import CreateAuctionPage from './pages/CreateAuctionPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import DashboardPage from './pages/DashboardPage';
+import { SocketProvider }     from './context/SocketContext';
+import { AuthProvider }       from './context/AuthContext';
+import FluidBackground        from './components/FluidBackground';
+import ThreeBackground        from './components/ThreeBackground';
+import Navbar                 from './components/Navbar';
+import HomePage               from './pages/HomePage';
+import AuctionsPage           from './pages/AuctionsPage';
+import AuctionDetailPage      from './pages/AuctionDetailPage';
+import CreateAuctionPage      from './pages/CreateAuctionPage';
+import LoginPage              from './pages/LoginPage';
+import RegisterPage           from './pages/RegisterPage';
+import DashboardPage          from './pages/DashboardPage';
 import './App.css';
 
 function App() {
@@ -17,16 +19,23 @@ function App() {
             <SocketProvider>
                 <Router>
                     <div className="app">
+                        {/* Layer 0 — CSS fluid blobs + grain + dot grid */}
+                        <FluidBackground />
+
+                        {/* Layer 1 — Three.js GLSL particles + wave mesh */}
+                        <ThreeBackground />
+
                         <Navbar />
+
                         <main className="main-content">
                             <Routes>
-                                <Route path="/" element={<HomePage />} />
-                                <Route path="/auctions" element={<AuctionsPage />} />
-                                <Route path="/auction/:id" element={<AuctionDetailPage />} />
+                                <Route path="/"               element={<HomePage />} />
+                                <Route path="/auctions"       element={<AuctionsPage />} />
+                                <Route path="/auction/:id"    element={<AuctionDetailPage />} />
                                 <Route path="/create-auction" element={<CreateAuctionPage />} />
-                                <Route path="/login" element={<LoginPage />} />
-                                <Route path="/register" element={<RegisterPage />} />
-                                <Route path="/dashboard" element={<DashboardPage />} />
+                                <Route path="/login"          element={<LoginPage />} />
+                                <Route path="/register"       element={<RegisterPage />} />
+                                <Route path="/dashboard"      element={<DashboardPage />} />
                             </Routes>
                         </main>
                     </div>
